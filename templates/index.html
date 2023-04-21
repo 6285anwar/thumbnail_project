@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <title>TUBERANKS | Thumbnail</title>
+    <link href="{% static '1/vendor/aos/aos.css' %}" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body style="background-color:#001350 ;">
+
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" style="color: white;">TUBERANKS | Thumbnails</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation" style="color: white;">
+                <span class="oi oi-menu"></span> Menu
+            </button>
+
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav ml-auto" style="color: rgb(2, 1, 1);">
+                    <li class="nav-item"><a href="#" class="nav-link" style="color: white;">Find Youtube Video Tags</a>
+                    </li>
+                    <li class="nav-item"><a href="#" class="nav-link" style="color: white;">Post</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" style="color: white;"> Privacy Policy</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- END nav -->
+
+    <div class="hero-wrap ftco-degree-bg"
+        style="background-image: url('../static/images/wallpapersden.com_long-exposure-of-rocket-launch_2048x1356.jpg')"
+        data-stellar-background-ratio="0.5">
+
+        <div class="container">
+            <div class="row no-gutters slider-text justify-content-center align-items-center">
+                <div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-end">
+                    <div class="text text-center">
+                        <h1 class="mb-4" style="color: rgb(255, 255, 255);">Download Youtube Thumbnails</h1>
+                        <p style="font-size: 18px; color: rgb(255, 255, 255);">Download youtube and vimeo thumbnail
+                            images of all quality for free.
+                            This application let you download thumbnails of all quality. Just paste the URL of the
+                            thumbnail video in the below input and click Get Thumbnail Image</p>
+                        <form action="{% url 'get_youtube_thumbnail' %}" class="search-location mt-md-5" method="post"
+                            enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row justify-content-center">
+                                <div class="col-lg-10 align-items-end">
+                                    <div class="form-group">
+                                        <div class="form-field">
+                                            <input type="text" class="form-control"
+                                                placeholder="Enter the youtube URL here" name="url">
+                                            <button style="background-color: red;"><span
+                                                    class="ion-ios-arrow-round-down"></span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main_card">
+            <div class="col-lg-12">
+                <div class="row no-gutters slider-text justify-content-center align-items-center">
+
+                    {% if thumbnail_url %}
+
+                    <img src="{{ thumbnail_url }}" alt="YouTube Thumbnail">
+
+                    {% endif %}
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+    <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/aos.js' %}"></script>
+    <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+    <script src="{% static 'js/jquery.timepicker.min.js' %}"></script>
+    <script src="{% static 'js/scrollax.min.js' %}"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script src="{% static 'js/google-map.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>
