@@ -1,0 +1,9 @@
+version: 1.0
+runtime: python
+port: 8000
+build:
+  commands:
+    - pip install -r requirements.txt
+  runtime-version: 3.9
+run:
+  command: gunicorn thumbnail.wsgi:application --bind 0.0.0.0:$PORT
